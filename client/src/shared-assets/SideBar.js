@@ -15,6 +15,7 @@ export default class Sidebar extends React.Component {
                 <Link to="/shop">Shop</Link>
                 <Link to="/bonds">Bonds</Link>
                 <Link to="/history">History</Link>
+                <Link to="/transfer">Transfer</Link>
             </Column>
         )
     }
