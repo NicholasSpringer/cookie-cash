@@ -21,7 +21,7 @@ class Bond(ndb.Model):
     redeemed = ndb.BooleanProperty()
     redeem_timestamp = ndb.IntegerProperty()
 
-class Child(nbd.Model):
+class Child(ndb.Model):
     name = ndb.StringProperty()
     cookies = ndb.IntegerProperty()
     completed_jobs = ndb.StructuredProperty(CompletedJob, repeated=True)
