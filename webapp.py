@@ -27,12 +27,11 @@ def login_required(f):
 
 
 @app.route('/')
-def render_level1():
+def render_landing():
     return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
-#@login_required
-def render_level2():
+def render_login():
     if request.method == 'POST':
         if request.form['password'] == 'yes':
             return 'woke'
