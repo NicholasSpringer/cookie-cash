@@ -1,3 +1,7 @@
+body {
+    background-color: white;
+}
+
 .navbar {
     background-color: #2d771e;
 }
@@ -6,3 +10,13 @@
     color: white !important;
     font-size: 18px;
 }
+
+#navbar-logo {
+    height:80px;
+}
+
+@media (max-width: 990px) {
+    #navbar-logo {
+        display: none;
+    }
+  }
