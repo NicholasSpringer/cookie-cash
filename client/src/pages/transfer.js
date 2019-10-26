@@ -1,7 +1,7 @@
 import React from 'react';
 import { Column, Row } from 'simple-flexbox';
 import { BrowserRouter, Route, Link } from "react-router-dom";
-
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 export default class Transfer extends React.Component {
   render() {
@@ -16,46 +16,47 @@ export default class Transfer extends React.Component {
 
 
 class TransferForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isGoing: true,
-      numberOfGuests: 2
-    };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
-
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  }
-
   render() {
     return (
-      <form>
-        <label>
-          Send CookieCash To:
-          <input
-            name="Receiver"
-            type="select"
-            onChange={this.handleInputChange} />
-        </label>
-        <br />
-        <label>
-          Amount:
-          <input
-            name="Amount"
-            type="number"
-            value={0}
-            onChange={this.handleInputChange} />
-        </label>
-      </form>
+      <div>
+        <h1>Transfer to a sibling</h1>
+        <Formik
+          initialValues={{ amount: '', user: '' }}
+          validate={values => {
+            let errors = {};
+            if (!values.email) {
+              errors.email = 'Required';
+            } else if (
+              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+            ) {
+              errors.email = 'Invalid email address';
+            }
+            return errors;
+          }}
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 400);
+          }}
+        >
+          {({ isSubmitting }) => (
+            <Form>
+              <Field type="number" name="amount" />
+              <ErrorMessage name="email" component="div" />
+              <Field as="select" name="user" >
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+              </Field>
+              <ErrorMessage name="password" component="div" />
+              <button type="submit" disabled={isSubmitting}>
+                Transfer
+          </button>
+            </Form>
+          )}
+        </Formik>
+      </div>
     );
   }
 }
