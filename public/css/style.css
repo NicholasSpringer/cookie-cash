@@ -1,14 +1,14 @@
 body {
   background-color: white;
+  font-family: "Open Sans", sans-serif;
 }
 
 .navbar {
-  background-color: rgba(1, 1, 1, 0);
+  background-color: white;
 }
 
 .nav-link {
   color: black !important;
-  font-family: "Open Sans", sans-serif;
   font-size: 20px;
   margin: 0px 20px;
 }
@@ -43,20 +43,4 @@ body {
   #navbar-logo {
     display: none;
   }
-}
-
-#hero-div {
-    background-image: url("Taieri.png");
-    background-size: cover;
-    height: 70vh;
-    text-align: center;
-}
-
-.hero-text {
-    color: black;
-    font-size: 48px;
-}
-
-#features {
-    margin-top: 30px;
 }
