@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="img/icon.png" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -14,7 +17,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/login.css" type="text/css" />
   </head>
-  <body>
+  <body onload="openCity(event, 'Parent')">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <button
@@ -45,10 +48,123 @@
       </div>
     </nav>
 
-    
+    <div id="login-form">
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Parent')">
+          Parent
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Child')">
+          Child
+        </button>
+      </div>
+      <div id="Parent" class="tabcontent">
+        <h3>Parent Login</h3>
+        <form action="/login-parent" method="POST">
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="bob.ross2019@google.com"
+            required
+          />
+          <br /> <br />
+          <label for="password">password: </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="super secret password"
+            required
+          />
+          <br /> <br />
+          <button>Enter</button>
+          <br /> <br />
+        </form>
+        <button onclick="openCity(event, 'CreateAccount')">Create Account</button>
+      </div>
 
+      <div id="Child" class="tabcontent">
+        <h3>Child Login</h3>
+        <form action="/login-child" method="POST">
+          <label for="email">Parent Email: </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="bob.ross2019@google.com"
+            required
+          />
+          <br /> <br />
+          <label for="username">Username: </label>
+          <input
+            type="name"
+            name="name"
+            placeholder="skaterboy10"
+            required
+          />
+          <br /> <br />
+          <label for="password">Password: </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="super secret password"
+            required
+          />
+          <br /> <br />
+          <button>Enter</button>
+        </form>
+      </div><div id="CreateAccount" class="tabcontent">
+          <h3>Create Account</h3>
+          <form action="/register" method="POST">
+            <label for="email">Email: </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="bob.ross2019@google.com"
+              required
+            />
+            <br /> <br />
+            <label for="username">Name: </label>
+            <input
+              type="name"
+              name="name"
+              placeholder="Nicholas Springer"
+              required
+            />
+            <br /> <br />
+            <label for="password">Password: </label>
+            <input
+              type="password"
+              name="password"
+              placeholder="super secret password"
+              required
+            />
+            <br /> <br />
+            <button onclick=>Enter</button>
+          </form>
+        </div>
+    </div>
 
+    <script>
+      function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
 
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
