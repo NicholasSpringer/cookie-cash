@@ -60,13 +60,8 @@
       </div>
       <!--PARENT LOGIN-->
       <div id="Parent" class="tabcontent">
-        <h3>Parent Login</h3>
-        <form action="/login" method="POST">
-          <input style="display: none"
-            type='text'
-            name='loginType'
-            value='parent'
-          />
+        <h2>Parent Login</h2>
+        <form action="/login-parent" method="POST">
           <label for="email">Email: </label>
           <input
             type="email"
@@ -74,7 +69,8 @@
             placeholder="bob.ross2019@google.com"
             required
           />
-          <br /> <br />
+          <br />
+          <br />
           <label for="password">password: </label>
           <input
             type="password"
@@ -82,21 +78,30 @@
             placeholder="super secret password"
             required
           />
-          <br /> <br />
-          <button>Enter</button>
-          <br /> <br />
+          <br />
+          <br />
+          <button type="button" class="btn btn-outline-success" onclick="form.submit()">Enter</button>
+          <br />
+          <br />
         </form>
-        <button onclick="openTab(event, 'CreateAccount')">Create Account</button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          onclick="openTab(event, 'CreateAccount')"
+        >
+          Create Account
+        </button>
       </div>
       <!--CHILD LOGIN-->
       <div id="Child" class="tabcontent">
-        <h3>Child Login</h3>
-        <form action="/login" method="POST">
+        <h2>Child Login</h3>
+        <form action="/login-child" method="POST">
           <label for="email">Parent Email: </label>
-          <input style="display: none"
-            type='text'
-            name='loginType'
-            value='child'
+          <input
+            style="display: none"
+            type="text"
+            name="loginType"
+            value="child"
           />
           <input
             type="email"
@@ -104,15 +109,12 @@
             placeholder="bob.ross2019@google.com"
             required
           />
-          <br /> <br />
+          <br />
+          <br />
           <label for="username">Username: </label>
-          <input
-            type="name"
-            name="name"
-            placeholder="skaterboy10"
-            required
-          />
-          <br /> <br />
+          <input type="name" name="name" placeholder="skaterboy10" required />
+          <br />
+          <br />
           <label for="password">Password: </label>
           <input
             type="password"
@@ -120,41 +122,45 @@
             placeholder="super secret password"
             required
           />
-          <br /> <br />
-          <button>Enter</button>
+          <br />
+          <br />
+          <button type="button" class="btn btn-outline-success" onclick="form.submit()">Enter</button>
         </form>
-      <!--REGISTER ACCOUNT-->
+        <!--REGISTER ACCOUNT-->
       </div>
       <div id="CreateAccount" class="tabcontent">
-          <h3>Create Account</h3>
-          <form action="/register" method="POST">
-            <label for="email">Email: </label>
-            <input
-              type="email"
-              name="email"
-              placeholder="bob.ross2019@google.com"
-              required
-            />
-            <br /> <br />
-            <label for="username">Name: </label>
-            <input
-              type="name"
-              name="name"
-              placeholder="Nicholas Springer"
-              required
-            />
-            <br /> <br />
-            <label for="password">Password: </label>
-            <input
-              type="password"
-              name="password"
-              placeholder="super secret password"
-              required
-            />
-            <br /> <br />
-            <button onclick=>Enter</button>
-          </form>
-        </div>
+        <h2>Create Account</h2>
+        <form action="/register" method="POST">
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="bob.ross2019@google.com"
+            required
+          />
+          <br />
+          <br />
+          <label for="username">Name: </label>
+          <input
+            type="name"
+            name="name"
+            placeholder="Nicholas Springer"
+            required
+          />
+          <br />
+          <br />
+          <label for="password">Password: </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="super secret password"
+            required
+          />
+          <br />
+          <br />
+          <button type="button" class="btn btn-outline-success" onclick="form.submit()">Enter</button>
+        </form>
+      </div>
     </div>
 
     <script>
