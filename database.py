@@ -1,4 +1,2 @@
-from google.cloud import datastore
+#from google.cloud import datastore
 
-def get_parent(email):
-    
