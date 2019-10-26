@@ -1,0 +1,15 @@
+#hero-div {
+    background-image: url("../img/Taieri.png");
+    background-size: cover;
+    height: 75vh;
+    text-align: center;
+}
+
+.hero-text {
+    color: black;
+    font-size: 48px;
+}
+
+#features {
+    margin-top: 30px;
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login - CookieCash</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="public/img/icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="public/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/login.css" type="text/css" />
+  </head>
+  <body onload="openTab(event, 'Parent')">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarToggler"
+          aria-controls="navbarToggler"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="/"><img src="public/img/logobw.png" id="navbar-logo"/></a>
+        <div class="collapse navbar-collapse order-3" id="navbarToggler">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--LOGIN FORMS-->
+    <div id="login-form">
+      <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Parent')">
+          Parent
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'Child')">
+          Child
+        </button>
+      </div>
+      <!--PARENT LOGIN-->
+      <div id="Parent" class="tabcontent">
+        <h2>Parent Login</h2>
+        <form action="/login-parent" method="POST">
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="bob.ross2019@google.com"
+            required
+          />
+          <br />
+          <br />
+          <label for="password">password: </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="super secret password"
+            required
+          />
+          <br />
+          <br />
+          <button type="button" class="btn btn-outline-success" onclick="form.submit()">Enter</button>
+          <br />
+          <br />
+        </form>
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          onclick="openTab(event, 'CreateAccount')"
+        >
+          Create Account
+        </button>
+      </div>
+      <!--CHILD LOGIN-->
+      <div id="Child" class="tabcontent">
+        <h2>Child Login</h3>
+        <form action="/login-child" method="POST">
+          <label for="email">Parent Email: </label>
+          <input
+            style="display: none"
+            type="text"
+            name="loginType"
+            value="child"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="bob.ross2019@google.com"
+            required
+          />
+          <br />
+          <br />
+          <label for="username">Username: </label>
+          <input type="name" name="name" placeholder="skaterboy10" required />
+          <br />
+          <br />
+          <label for="password">Password: </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="super secret password"
+            required
+          />
+          <br />
+          <br />
+          <button type="button" class="btn btn-outline-success" onclick="form.submit()">Enter</button>
+        </form>
+        <!--REGISTER ACCOUNT-->
+      </div>
+      <div id="CreateAccount" class="tabcontent">
+        <h2>Create Account</h2>
+        <form action="/register" method="POST">
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="bob.ross2019@google.com"
+            required
+          />
+          <br />
+          <br />
+          <label for="username">Name: </label>
+          <input
+            type="name"
+            name="name"
+            placeholder="Nicholas Springer"
+            required
+          />
+          <br />
+          <br />
+          <label for="password">Password: </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="super secret password"
+            required
+          />
+          <br />
+          <br />
+          <button type="button" class="btn btn-outline-success" onclick="form.submit()">Enter</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
