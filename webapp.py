@@ -25,7 +25,6 @@ def login_required(f):
 
     return wrap
 
-
 @app.route('/')
 def render_landing():
     return render_template('index.html')
