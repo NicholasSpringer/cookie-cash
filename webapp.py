@@ -1,6 +1,7 @@
 from flask import Flask, request, Response, render_template, g, abort
 from functools import wraps
 from jwt import decode, exceptions
+import database
 import json
 
 app = Flask(__name__, template_folder='public', static_folder='')
@@ -39,6 +40,10 @@ def render_login():
             return 'not woke'
     else:
         return render_template('login.html')
+
+@app.route('/register', methods=['GET'])
+def register():
+    return "Hello, world!"
 
 
 if __name__ == '__main__':
