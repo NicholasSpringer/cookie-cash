@@ -1,6 +1,6 @@
 import React from 'react';
-import { Column, Row } from 'simple-flexbox';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Column } from 'simple-flexbox';
+import { Link } from "react-router-dom";
 
 
 export default class Sidebar extends React.Component {
@@ -9,7 +9,7 @@ export default class Sidebar extends React.Component {
             <Column
                 style={{ width: '20%', backgroundColor: "green" }}
                 horizontal='center'
-                justifyContent="space-evenly"
+                justifyContent="flex-start"
                 alignSelf="stretch">
                 <Link to="/jobs">Jobs</Link>
                 <Link to="/shop">Shop</Link>

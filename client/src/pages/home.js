@@ -8,7 +8,6 @@ import History from "./history"
 import Bonds from "./bonds"
 import Transfer from "./transfer"
 import {
-  BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
