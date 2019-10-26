@@ -1,22 +1,62 @@
 body {
-    background-color: white;
+  background-color: white;
 }
 
 .navbar {
-    background-color: #2d771e;
+  background-color: rgba(1, 1, 1, 0);
 }
 
 .nav-link {
-    color: white !important;
-    font-size: 18px;
+  color: black !important;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  margin: 0px 20px;
+}
+
+.nav-item:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-item:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 #navbar-logo {
-    height:80px;
+  height: 50px;
+  margin: 20px 0px 20px 0px;
 }
 
 @media (max-width: 990px) {
-    #navbar-logo {
-        display: none;
-    }
+  #navbar-logo {
+    display: none;
   }
+}
+
+#hero-div {
+    background-image: url("Taieri.png");
+    background-size: cover;
+    height: 70vh;
+    text-align: center;
+}
+
+.hero-text {
+    color: black;
+    font-size: 48px;
+}
+
+#features {
+    margin-top: 30px;
+}
