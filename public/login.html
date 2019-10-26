@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="public/css/style.css" type="text/css" />
     <link rel="stylesheet" href="public/css/login.css" type="text/css" />
   </head>
-  <body onload="openCity(event, 'Parent')">
+  <body onload="openTab(event, 'Parent')">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <button
@@ -51,10 +51,10 @@
 
     <div id="login-form">
       <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'Parent')">
+        <button class="tablinks" onclick="openTab(event, 'Parent')">
           Parent
         </button>
-        <button class="tablinks" onclick="openCity(event, 'Child')">
+        <button class="tablinks" onclick="openTab(event, 'Child')">
           Child
         </button>
       </div>
@@ -85,7 +85,7 @@
           <button>Enter</button>
           <br /> <br />
         </form>
-        <button onclick="openCity(event, 'CreateAccount')">Create Account</button>
+        <button onclick="openTab(event, 'CreateAccount')">Create Account</button>
       </div>
 
       <div id="Child" class="tabcontent">
@@ -155,7 +155,7 @@
     </div>
 
     <script>
-      function openCity(evt, cityName) {
+      function openTab(evt, tabName) {
         // Declare all variables
         var i, tabcontent, tablinks;
 
@@ -172,7 +172,7 @@
         }
 
         // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(cityName).style.display = "block";
+        document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className += " active";
       }
     </script>
