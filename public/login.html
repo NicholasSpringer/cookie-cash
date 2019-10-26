@@ -4,7 +4,7 @@
     <title>Login - CookieCash</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="img/icon.png" />
+    <link rel="shortcut icon" href="public/img/icon.png" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
@@ -15,8 +15,8 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/login.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/login.css" type="text/css" />
   </head>
   <body onload="openCity(event, 'Parent')">
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -32,11 +32,11 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a href="index.html"><img src="img/logobw.png" id="navbar-logo"/></a>
+        <a href="/"><img src="public/img/logobw.png" id="navbar-logo"/></a>
         <div class="collapse navbar-collapse order-3" id="navbarToggler">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -60,7 +60,12 @@
       </div>
       <div id="Parent" class="tabcontent">
         <h3>Parent Login</h3>
-        <form action="/login-parent" method="POST">
+        <form action="/login" method="POST">
+          <input style="display: none"
+            type='text'
+            name='loginType'
+            value='parent'
+          />
           <label for="email">Email: </label>
           <input
             type="email"
@@ -85,8 +90,13 @@
 
       <div id="Child" class="tabcontent">
         <h3>Child Login</h3>
-        <form action="/login-child" method="POST">
+        <form action="/login" method="POST">
           <label for="email">Parent Email: </label>
+          <input style="display: none"
+            type='text'
+            name='loginType'
+            value='child'
+          />
           <input
             type="email"
             name="email"
