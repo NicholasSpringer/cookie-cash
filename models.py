@@ -25,7 +25,7 @@ class Child(ndb.Model):
     name = ndb.StringProperty()
     cookies = ndb.IntegerProperty()
     completed_jobs = ndb.StructuredProperty(CompletedJob, repeated=True)
-    purchased_items = ndb.StructuredProperty(PurchasedItems, repeated=True)
+    purchased_items = ndb.StructuredProperty(PurchasedItem, repeated=True)
     bonds = ndb.StructuredProperty(Bond, repeated=True)
 
 class Account(ndb.Model):
