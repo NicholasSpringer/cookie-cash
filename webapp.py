@@ -148,7 +148,7 @@ def get_pending_jobs():
     with client.context():
         child_dict = get_child(parent_id, 
             child_name).to_dict()
-        return json.dumps(child_dict['pendings_jobs'])
+        return json.dumps(child_dict['pending_jobs'])
 
 @app.route('/api/get_sibling_names')
 @login_required
