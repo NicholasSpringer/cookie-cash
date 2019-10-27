@@ -1,6 +1,6 @@
 # 🍪Cookie Cash 
 
-[![Hackathon](https://img.shields.io/badge/Hackathon-YHack-orange)](http://brownhackhealth.org) 
+[![Hackathon](https://img.shields.io/badge/Hackathon-YHack-orange)](https://www.yhack.org/) 
 [![Status](https://img.shields.io/badge/status-not%20maintained-red)]() 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md) 
   
@@ -26,6 +26,14 @@ Time constraints, new frameworks, life (we came nowhere close to finishing lol)
 
 ## What's next for CookieCash
 Maybe we'll actually make a thing out of this, we dunno.
+But in the meantime lemme tell you what this was meant to be:
+
+CookieCash was meant to have two different experiences – one for the parent and one for the children (who will each have their account created by their parent).
+
+The parent would be able to create jobs for the children to do, and set up a shop that contains prizes or favours the kids can but when they complete enough jobs. The parent can also set limits to how many bonds the kids can buy and how much money they can send and receive to and from siblings.
+
+Children will be able to see available jobs, complete them (though when they claim that they’re completed they’re actually just changed to pending and the parents will have to confirm their completeness for the children to earn their CookieCash for that job), buy bonds (and see all the bonds that are yet to be re-claimable), transfer funds to their siblings, but things from their parent’s shop and see all their account’s activity history.
+
 
 ## How to Run the Thing
 Open your terminal!
