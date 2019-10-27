@@ -1,22 +1,22 @@
 import React from 'react';
-import { Column } from 'simple-flexbox';
+import { Row } from 'simple-flexbox';
 import { Link } from "react-router-dom";
 
 
 export default class Sidebar extends React.Component {
     render() {
         return (
-            <Column
-                id='sidebar'
-                horizontal='center'
-                justifyContent="flex-start"
+            <Row
+                style = {{background: "green"}}
+                justifyContent = "space-evenly"
+                vertical = "center"
                 alignSelf="stretch">
                 <Link to="/jobs" class="navButton">Jobs</Link>
                 <Link to="/shop" class="navButton">Shop</Link>
                 <Link to="/bonds" class="navButton">Bonds</Link>
                 <Link to="/history" class="navButton">History</Link>
                 <Link to="/transfer" class="navButton">Transfer</Link>
-            </Column>
+            </Row>
         )
     }
 }

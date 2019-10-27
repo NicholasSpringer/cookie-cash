@@ -1,7 +1,7 @@
 import React from 'react';
 import { Column, Row } from 'simple-flexbox';
-import Sidebar from "../shared-assets/SideBar"
 import Header from "../shared-assets/HeaderBanner"
+import Menu from "../shared-assets/Menu"
 import Jobs from "./jobs"
 import Shop from "./shop"
 import History from "./history"
@@ -16,10 +16,10 @@ export default class Home extends React.Component {
   render() {
     return (
       <Column
-        style={{ height: '100vh', backgroundColor: "white" }}>
+        style={{ height: '100vh', backgroundColor: "white" }}
+        horizontal = "stretch">
         <Header />
-        <Row vertical='center' flexGrow={1}>
-          <Sidebar />
+        <Menu />
           <Switch>
             <Route path="/jobs"> <Jobs /> </Route>
             <Route path="/shop"> <Shop /> </Route>
@@ -27,7 +27,6 @@ export default class Home extends React.Component {
             <Route path="/bonds"> <Bonds /> </Route>
             <Route path="/history"> <History /> </Route>
           </Switch>
-        </Row>
       </Column>
     )
   }
