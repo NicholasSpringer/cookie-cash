@@ -8,12 +8,10 @@ import LoadingModal from '../shared-assets/loadingModal';
 export default class Jobs extends React.Component {
 
     fetch_url1 = "http://localhost:3000/api/get_available_jobs?parent_id=parent1"
-    fetch_url2 = "http://localhost:3000/api/get_pending_jobs?parent_id=parent1"
 
     constructor(props){
         super(props);
         this.state = {
-            pendingJobs: [],
             availJobs: [],
             isLoading: false
         }
