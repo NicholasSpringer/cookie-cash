@@ -1,4 +1,11 @@
 # 🍪Cookie Cash 
+
+[![Hackathon](https://img.shields.io/badge/Hackathon-YHack-orange)](http://brownhackhealth.org) 
+[![Status](https://img.shields.io/badge/status-not%20maintained-red)]() 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md) 
+  
+[![Warning](https://img.shields.io/badge/prepare%20to%20see-hackathon%20spaghetti%20code-yellow)]()
+  
 ![CookieCash logo](/github_media/Banner.png)
 
 ## Inspiration
@@ -15,7 +22,12 @@ We built the frontend with React and the backend with Flask and GCP Datastore.
 
 ## Challenges we ran into
 
-Time constraints, new frameworks, life
+Time constraints, new frameworks, life (we came nowhere close to finishing lol)
 
 ## What's next for CookieCash
 Maybe we'll actually make a thing out of this, we dunno.
+
+## How to Run the Thing
+Open your terminal!
+If you want to see the landing page (which is broken now for some reason :/), from the repo's main directory, run `python3 webapp.py`
+If you want to see the React portion of the app, then `cd` into the `public/client` folder and run `npm start`
