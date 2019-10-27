@@ -86,7 +86,7 @@ def get_available_jobs():
     client = ndb.Client()
     with client.context():
         parent_dict = get_parent(parent_id).to_dict()
-        return json.dumps(parent_dict['available_jobs'])
+        return '{ "array":' + json.dumps(parent_dict['available_jobs']) + '}'
 
 @app.route('/api/get_available_items')
 @login_required
@@ -95,7 +95,7 @@ def get_available_items():
     client = ndb.Client()
     with client.context():
         parent_dict = get_parent(parent_id).to_dict()
-        return json.dumps(parent_dict['available_items'])
+        return '{ "array":' + json.dumps(parent_dict['available_items']) + '}'
 
 @app.route('/api/get_active_bonds')
 @login_required
@@ -106,8 +106,8 @@ def get_active_bonds():
     with client.context():
         child_dict = get_child(parent_id, 
             child_name).to_dict()
-        return json.dumps([bond for bond in child_dict['bonds'] 
-            if not bond['redeemed']])
+        return '{ "array":' + json.dumps([bond for bond in child_dict['bonds'] 
+            if not bond['redeemed']]) + '}'
 
 @app.route('/api/get_redeemed_bonds')
 @login_required
@@ -118,8 +118,8 @@ def get_redeemed_bonds():
     with client.context():
         child_dict = get_child(parent_id, 
             child_name).to_dict()
-        return json.dumps([bond for bond in child_dict['bonds'] 
-            if bond['redeemed']])
+        return '{ "array":' + json.dumps([bond for bond in child_dict['bonds'] 
+            if bond['redeemed']]) + '}'
 
 @app.route('/api/get_purchased_items')
 @login_required
@@ -130,7 +130,7 @@ def get_purchased_items():
     with client.context():
         child_dict = get_child(parent_id, 
             child_name).to_dict()
-        return json.dumps(child_dict['purchased_items'])
+        return '{ "array":' + json.dumps(child_dict['purchased_items']) + '}'
 
 @app.route('/api/get_completed_jobs')
 @login_required
@@ -141,7 +141,7 @@ def get_completed_jobs():
     with client.context():
         child_dict = get_child(parent_id, 
             child_name).to_dict()
-        return json.dumps(child_dict['completed_jobs'])
+        return '{ "array":' + json.dumps(child_dict['completed_jobs']) + '}'
 
 @app.route('/api/get_pending_jobs')
 @login_required
@@ -152,7 +152,7 @@ def get_pending_jobs():
     with client.context():
         child_dict = get_child(parent_id, 
             child_name).to_dict()
-        return json.dumps(child_dict['pending_jobs'])
+        return '{ "array":' + json.dumps(child_dict['pending_jobs']) + '}'
 
 @app.route('/api/get_sibling_names')
 @login_required
@@ -163,7 +163,7 @@ def get_sibling_names():
     with client.context():
         parent = get_parent(parent_id)
         child_list = [child.get().name for child in parent.children]
-        return json.dumps([cn for cn in child_list if not cn == child_name])
+        return '{ "array":' + json.dumps([cn for cn in child_list if not cn == child_name]) + '}'
 
 
 if __name__ == '__main__':

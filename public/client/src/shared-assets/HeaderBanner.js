@@ -7,6 +7,7 @@ export default class Banner extends React.Component {
             <Row
                 horizontal='start'
                 id='banner'>
+                    <span> </span>
             </Row>
         )
     }

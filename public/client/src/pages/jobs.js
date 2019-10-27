@@ -7,7 +7,26 @@ import LoadingModal from '../shared-assets/loadingModal';
 
 export default class Jobs extends React.Component {
 
-    fetch_url1 = "http://localhost:3000/api/get_available_jobs?parent_id=parent1"
+    jobs = [{
+        name: "this is something",
+        status: "Available",
+        desc: "Blah Blah Blah Blahv Blah Blah Blah Blahv Blah Blah Blah Blahv"
+    },
+    {
+        name: "Do your goddamn homework",
+        status: "Available",
+        desc: "Blah Blah Blah Blahv Blah Blah Blah Blahv Blah Blah Blah Blahv"
+    },
+    {
+        name: "Meh this is anohter work",
+        status: "Available",
+        desc: "Blah Blah Blah Blahv Blah Blah Blah Blahv Blah Blah Blah Blahv"
+    },
+    {
+        name: "this is hilarious",
+        status: "Available",
+        desc: "Blah Blah Blah Blahv Blah Blah Blah Blahv Blah Blah Blah Blahv"
+    }]
 
     constructor(props){
         super(props);
@@ -25,7 +44,7 @@ export default class Jobs extends React.Component {
                 vertical="start">
                 <h1 class="pageBanner"> Jobs </h1>
 
-                {this.state.availJobs.map((j) => <JobsSlide job = {j}/>)}
+                {this.jobs.map((j) => <JobsSlide job = {j}/>)}
 
                 <LoadingModal isOpen = {this.state.isLoading}/>
 
