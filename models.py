@@ -8,16 +8,16 @@ class CompletedJob(ndb.Model):
     job = ndb.StructuredProperty(Job)
     timestamp = ndb.IntegerProperty()
 
-class ShopItem(ndb.Model):
+class Item(ndb.Model):
     name = ndb.StringProperty()
     value = ndb.IntegerProperty()
     
 class PurchasedItem(ndb.Model):
-    item = ndb.StructuredProperty(ShopItem)
+    item = ndb.StructuredProperty(Item)
     timestamp = ndb.IntegerProperty()
 
 class Bond(ndb.Model):
-    bond_type = ndb.StringProperty()
+    type = ndb.StringProperty()
     redeemed = ndb.BooleanProperty()
     redeem_timestamp = ndb.IntegerProperty()
 
@@ -28,8 +28,30 @@ class Child(ndb.Model):
     purchased_items = ndb.StructuredProperty(PurchasedItem, repeated=True)
     bonds = ndb.StructuredProperty(Bond, repeated=True)
 
-class Account(ndb.Model):
-    email = ndb.StringProperty()
+class Parent(ndb.Model):
     password =  ndb.StringProperty()
+    children = ndb.KeyProperty(repeated=True)
     available_jobs = ndb.StructuredProperty(Job, repeated=True)
-    shop_items = ndb.StructuredProperty(ShopItem, repeated=True)
+    available_items = ndb.StructuredProperty(Item, repeated=True)
+
+def get_parent(id):
+    key = ndb.Key('Parent', id)
+    return key.get()
+
+def set_parent(parent):
+    parent.put()
+
+def get_child(parent_id, child_name):
+    parent = ndb.Key('Parent', parent_id).get()
+    for child_key in parent.children:
+        child = child_key.get()
+        if child.name == child_name:
+            return child
+    return None
+
+def set_child(parent_id, child):
+    parent = ndb.Key('Parent', parent_id).get()
+    parent.children = [child_key for child_key in parent.children 
+        if child_key.get().name != child.name]
+    parent.children.append(child.put())
+    parent.put()
