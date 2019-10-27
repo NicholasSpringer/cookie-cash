@@ -1,6 +1,6 @@
 import React from 'react';
 import { Column, Row } from 'simple-flexbox';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { HashRouter, Route, Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 export default class Transfer extends React.Component {

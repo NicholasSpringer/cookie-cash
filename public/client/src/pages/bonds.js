@@ -1,6 +1,6 @@
 import React from 'react';
 import { Column, Row } from 'simple-flexbox';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { HashRouter, Route, Link } from "react-router-dom";
 
 
 export default class Bonds extends React.Component {

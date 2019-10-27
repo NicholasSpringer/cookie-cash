@@ -1,6 +1,6 @@
 import React from 'react';
 import { Column, Row } from 'simple-flexbox';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { HashRouter, Route, Link } from "react-router-dom";
 
 export default class History extends React.Component {
 
@@ -47,11 +47,11 @@ class TransactionSlide extends React.Component {
     render() {
         var imageSrc;
         if (this.props.transaction.type == "Bond") {
-            imageSrc = '../shared-assets/BondImage.svg'
+            imageSrc = require('../shared-assets/BondImage.svg')
         } else if (this.props.transaction.type == "Purchase") {
-            imageSrc = '../shared-assets/PurchaseImage.svg'
+            imageSrc = require('../shared-assets/PurchaseImage.svg')
         } else if (this.props.transaction.type == "Transfer") {
-            imageSrc = '../shared-assets/TransferImage.svg'
+            imageSrc = require('../shared-assets/TransferImage.svg')
         }
         return (
             <Row
@@ -63,7 +63,7 @@ class TransactionSlide extends React.Component {
                     backgroundColor: "grey",
                 }}>
                 <img
-                    src={require(imageSrc)}
+                    src={imageSrc}
                     style={{ width: "60px", height: "60px", padding: 20 }} />
                 <Column>
                     <h3> {this.props.transaction.type} </h3>

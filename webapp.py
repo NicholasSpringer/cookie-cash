@@ -1,18 +1,12 @@
 from flask import Flask, request, Response, render_template, g, abort, redirect
-import flask-login
 from functools import wraps
 from jwt import decode, exceptions
-import database
+#import database
 import json
 
 app = Flask(__name__, template_folder='public', static_folder='')
 app.secret_key = 'b_j*c1hSjc9aKCNam87612j]/'
-login_manager = LoginManager()
-login_manager.init_app(app)
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.get(user_id)
 
 def login_required(f):
     @wraps(f)
@@ -38,16 +32,16 @@ def render_login():
     return render_template('login.html')
 
 @app.route('/app', methods=['GET'])
-@login_required
+#@login_required
 def render_app():
-    return 'hello'
+    return render_template('./client/build/index.html')
 
 @app.route('/login-parent', methods=['POST'])
 def login_parent():
     email = request.form['email']
     password = request.form['password']
 
-    user = #search by email to find user
+    user = 1 #search by email to find user
 
     if not user or not check_password_hash(user.password, password):
         return redirect("/login", code=302)
@@ -69,7 +63,7 @@ def register():
     username = request.form['name']
     password = request.form['password']
 
-    user = #search by email to find user
+    user = 1 #search by email to find user
 
     if (user):
         return redirect("/login", code=302)
