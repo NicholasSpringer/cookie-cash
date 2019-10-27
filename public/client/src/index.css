@@ -1,6 +1,5 @@
-body {
-  margin: 0;
-  padding-bottom: 20vw;
+body{
+  margin-bottom: 20px;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -24,6 +23,12 @@ h3 {
   bottom: 0;
   left: 0;
   right: 0;
+  height: 30px;
+}
+
+.grandparentPanel {
+  background-image: url("shared-assets/background.png");
+  background-size: 300px;
 }
 
 .pageBanner {
@@ -47,7 +52,6 @@ h3 {
 }
 
 .jobColumn {
-  background-image: url("shared-assets/Taieri.png");
   background-size: contain;
   width: 100%;
   height: 100%;
@@ -55,9 +59,15 @@ h3 {
 
 .jobSlide {
   border-radius: 5px;
+<<<<<<< HEAD
   border: solid 1px rgba(1, 1, 1, 0.2);
   background-color: rgba(255, 255, 255, 0.95);
   margin: 5px;
+=======
+  border: solid 3px whitesmoke;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 10px 18px;
+>>>>>>> 102a1f05db67fae1927cae5ba62c8717f5c802b8
   padding: 0px 10px;
 }
 

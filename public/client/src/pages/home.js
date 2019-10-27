@@ -16,8 +16,9 @@ export default class Home extends React.Component {
   render() {
     return (
       <Column
-        style={{ height: '100vh', backgroundColor: "white" }}
-        horizontal = "stretch">
+        horizontal = "stretch"
+        class="grandparentPanel"
+        style = {{ height: '100vh'}}>
         <Header />
         <Menu />
           <Switch>
