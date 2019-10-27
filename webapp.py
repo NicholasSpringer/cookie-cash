@@ -7,7 +7,6 @@ import json
 app = Flask(__name__, template_folder='public', static_folder='')
 app.secret_key = 'b_j*c1hSjc9aKCNam87612j]/'
 
-
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -34,7 +33,7 @@ def render_login():
 @app.route('/app', methods=['GET'])
 #@login_required
 def render_app():
-    return render_template('./client/build/index.html')
+    return render_template('client/build/index.html')
 
 @app.route('/login-parent', methods=['POST'])
 def login_parent():
