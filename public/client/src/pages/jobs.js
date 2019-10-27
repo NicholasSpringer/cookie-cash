@@ -1,30 +1,23 @@
 import React from 'react';
 import { Column, Row } from 'simple-flexbox';
 import { HashRouter, Route, Link } from "react-router-dom";
+import Loader from '../shared-assets/loadingModal'
+import LoadingModal from '../shared-assets/loadingModal';
 
 
 export default class Jobs extends React.Component {
 
-    jobs = [{
-        name: "this is something",
-        status: "Available",
-        desc: "Blah Blah Blah Blahv Blah Blah Blah Blahv Blah Blah Blah Blahv"
-    },
-    {
-        name: "Do your goddamn homework",
-        status: "Available",
-        desc: "Blah Blah Blah Blahv Blah Blah Blah Blahv Blah Blah Blah Blahv"
-    },
-    {
-        name: "Meh this is anohter work",
-        status: "Available",
-        desc: "Blah Blah Blah Blahv Blah Blah Blah Blahv Blah Blah Blah Blahv"
-    },
-    {
-        name: "this is hilarious",
-        status: "Available",
-        desc: "Blah Blah Blah Blahv Blah Blah Blah Blahv Blah Blah Blah Blahv"
-    }]
+    fetch_url1 = "http://localhost:3000/api/get_available_jobs?parent_id=parent1"
+    fetch_url2 = "http://localhost:3000/api/get_pending_jobs?parent_id=parent1"
+
+    constructor(props){
+        super(props);
+        this.state = {
+            pendingJobs: [],
+            availJobs: [],
+            isLoading: false
+        }
+    }
 
     render() {
         return (
@@ -33,7 +26,11 @@ export default class Jobs extends React.Component {
                 horizontal="stretch"
                 vertical="start">
                 <h1 class="pageBanner"> Jobs </h1>
-                {this.jobs.map((j) => <JobsSlide job = {j}/>)}
+
+                {this.state.availJobs.map((j) => <JobsSlide job = {j}/>)}
+
+                <LoadingModal isOpen = {this.state.isLoading}/>
+
             </Column>
         )
     }
