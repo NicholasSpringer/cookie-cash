@@ -26,6 +26,7 @@ export default class Home extends React.Component {
             <Route path="/transfer"> <Transfer /> </Route>
             <Route path="/bonds"> <Bonds /> </Route>
             <Route path="/history"> <History /> </Route>
+            <Route path="/"> <Jobs /> </Route>
           </Switch>
       </Column>
     )
