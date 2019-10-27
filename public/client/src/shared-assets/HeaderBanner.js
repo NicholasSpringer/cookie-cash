@@ -6,8 +6,8 @@ export default class Banner extends React.Component {
         return (
             <Row
                 horizontal='start'
-                style={{ backgroundColor: "green" }}>
-                <h1 style={{ marginLeft: "30px" }}>CookieCash</h1>
+                id='banner'>
+                    CookieCash
             </Row>
         )
     }

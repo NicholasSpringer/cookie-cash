@@ -7,15 +7,15 @@ export default class Sidebar extends React.Component {
     render() {
         return (
             <Column
-                style={{ width: '20%', backgroundColor: "green" }}
+                id='sidebar'
                 horizontal='center'
                 justifyContent="flex-start"
                 alignSelf="stretch">
-                <Link to="/jobs">Jobs</Link>
-                <Link to="/shop">Shop</Link>
-                <Link to="/bonds">Bonds</Link>
-                <Link to="/history">History</Link>
-                <Link to="/transfer">Transfer</Link>
+                <Link to="/jobs" class="navButton">Jobs</Link>
+                <Link to="/shop" class="navButton">Shop</Link>
+                <Link to="/bonds" class="navButton">Bonds</Link>
+                <Link to="/history" class="navButton">History</Link>
+                <Link to="/transfer" class="navButton">Transfer</Link>
             </Column>
         )
     }
