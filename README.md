@@ -37,5 +37,6 @@ Children will be able to see available jobs, complete them (though when they cla
 
 ## How to Run the Thing
 Open your terminal!
-If you want to see the landing page (which is broken now for some reason :/), from the repo's main directory, run `python3 webapp.py`
+If you want to see the landing page (which is broken now for some reason :/), from the repo's main directory, run `python3 webapp.py`. This probably won't work though becuase you'll need GCP keys and stuff.
+
 If you want to see the React portion of the app, then `cd` into the `public/client` folder and run `npm start`
