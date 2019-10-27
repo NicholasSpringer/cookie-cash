@@ -1,4 +1,4 @@
-# Cookie Cash
+# Cookie Cash 🍪
 
 ## Inspiration
 
