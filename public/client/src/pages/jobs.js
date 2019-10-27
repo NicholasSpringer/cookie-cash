@@ -29,13 +29,11 @@ export default class Jobs extends React.Component {
     render() {
         return (
             <Column
-                style={{ height: "100%", width: "100%" }}
+                class="jobColumn"
                 horizontal="stretch"
                 vertical="start">
-                <h3 style={{ textAlign: "center" }}> Jobs page </h3>
-                
+                <h1 style={{ textAlign: "center" }}> Jobs page </h1>
                 {this.jobs.map((j) => <JobsSlide job = {j}/>)}
-                
             </Column>
         )
     }
@@ -45,27 +43,16 @@ class JobsSlide extends React.Component {
     render() {
         return (
             <Row
-                vertical="center"
-                style={{
-                    borderBottom: "5px",
-                    borderColor: "grey",
-                    margin: "10px",
-                    backgroundColor: "grey",
-                }}>
-                <img
-                    src={require('../shared-assets/DefualtJobImage.png')}
-                    style={{ width: "60px", height: "60px", padding: 20 }} />
+                class="jobSlide"
+                vertical="center">
                 <Column>
-                    <h3> {this.props.job.name} </h3>
-                    <Row style={{ marginBottom: 10 }}>
-                        <span> Status </span>
-                        <span style={{ backgroundColor: "green", marginLeft: 15 }}> {this.props.job.status} </span>
+                        <span class="jobName"> {this.props.job.name} </span>
+                    <Row>
+                        <span class="jobDesc">Status: <span class="jobStatus"> {this.props.job.status} </span></span>
                     </Row>
-                    <span> {this.props.job.desc} </span>
-                    <Row horizontal="center">
-                        <button style={{ padding: 15, margin: 10 }}>
-                            Complete
-                            </button>
+                        <span class="jobDesc"> {this.props.job.desc} </span>
+                    <Row>
+                        <button class="myButton">Complete</button>
                     </Row>
                 </Column>
             </Row>
