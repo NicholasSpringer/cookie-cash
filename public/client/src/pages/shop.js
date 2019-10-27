@@ -2,7 +2,6 @@ import React from 'react';
 import { Column, Row } from 'simple-flexbox';
 import { HashRouter, Route, Link } from "react-router-dom";
 
-
 export default class Shop extends React.Component {
 
     items = [{
@@ -33,13 +32,11 @@ export default class Shop extends React.Component {
     render() {
         return (
             <Column
-                style={{ height: "100%", width: "100%" }}
+                class="jobColumn"
                 horizontal="stretch"
                 vertical="start">
-                <h3 style={{ textAlign: "center" }}> Jobs page </h3>
-                
+                <h1 class="pageBanner"> Shop </h1>
                 {this.items.map((i) => <ItemSlide item = {i}/>)}
-                
             </Column>
         )
     }
@@ -50,26 +47,15 @@ class ItemSlide extends React.Component {
         return (
             <Row
                 vertical="center"
-                style={{
-                    borderBottom: "5px",
-                    borderColor: "grey",
-                    margin: "10px",
-                    backgroundColor: "grey",
-                }}>
-                <img
-                    src={require('../shared-assets/DefualtJobImage.png')}
-                    style={{ width: "60px", height: "60px", padding: 20 }} />
+                class="jobSlide">
                 <Column>
-                    <h3> {this.props.item.name} </h3>
-                    <Row style={{ marginBottom: 10 }}>
-                        <span> Price </span>
-                        <span style={{ backgroundColor: "gold", marginLeft: 15 }}> {this.props.item.price} </span>
+                        <span class="jobName"> {this.props.item.name} </span>
+                    <Row>
+                        <span class="jobDesc">Price: {this.props.item.price} cookies</span>
                     </Row>
-                    <span> {this.props.item.desc} </span>
-                    <Row horizontal="center">
-                        <button style={{ padding: 15, margin: 10 }}>
-                            Complete
-                            </button>
+                        <span class="jobDesc"> {this.props.item.desc} </span>
+                    <Row>
+                        <button class="myButton">Complete</button>
                     </Row>
                 </Column>
             </Row>

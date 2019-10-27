@@ -29,10 +29,10 @@ export default class Bonds extends React.Component {
     render() {
         return (
             <Column
-                style={{ height: "100%", width: "100%", margin: 20 }}
+                class="jobColumn"
                 horizontal="stretch"
                 vertical="start">
-                <h3 style={{ textAlign: "center" }}> Bonds page </h3>
+                <h1 class="pageBanner"> Bonds </h1>
 
                 <Row>
                     <Column
@@ -44,7 +44,7 @@ export default class Bonds extends React.Component {
                     <Column
                         style={{ margin: 10, backgroundColor: "grey", flexGrow: 1, paddingBottom: 10 }}
                         horizontal="center">
-                        <h1>Meduim Term</h1>
+                        <h1>Medium Term</h1>
                         <span>Description of meduim term thingy</span>
                     </Column>
                     <Column
@@ -57,7 +57,7 @@ export default class Bonds extends React.Component {
 
                 {this.bonds.map((b) => <BondSlide bond={b} />)}
 
-                <button style={{ padding: 10 }}>Create New Bond</button>
+                <button class="myButton">Create New Bond</button>
 
             </Column>
         )
@@ -69,15 +69,7 @@ class BondSlide extends React.Component {
         return (
             <Row
                 vertical="center"
-                style={{
-                    borderBottom: "5px",
-                    borderColor: "grey",
-                    margin: "10px",
-                    backgroundColor: "grey",
-                }}>
-                <img
-                    src={require('../shared-assets/DefualtJobImage.png')}
-                    style={{ width: "60px", height: "60px", padding: 20 }} />
+                class="jobSlide">
                 <Column>
                     <span> Yield: {this.props.bond.yield} </span>
                     <Row style={{ marginBottom: 10 }}>

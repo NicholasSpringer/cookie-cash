@@ -3,8 +3,6 @@ import { Column, Row } from 'simple-flexbox';
 import { HashRouter, Route, Link } from "react-router-dom";
 
 export default class History extends React.Component {
-
-
     transactions = [{
         type: "Bond",
         timestamp: "Oct 26 11:16",
@@ -29,19 +27,16 @@ export default class History extends React.Component {
     render() {
         return (
             <Column
-                style={{ height: "100%", width: "100%" }}
+                class="jobColumn"
                 horizontal="stretch"
                 vertical="start">
-                <h3 style={{ textAlign: "center" }}>  Past Transactions </h3>
-
+                <h1 class="pageBanner">  Past Transactions </h1>
                 {this.transactions.map((i) => <TransactionSlide transaction={i} />)}
-
             </Column>
         )
     }
 
 }
-
 
 class TransactionSlide extends React.Component {
     render() {
@@ -56,12 +51,7 @@ class TransactionSlide extends React.Component {
         return (
             <Row
                 vertical="center"
-                style={{
-                    borderBottom: "5px",
-                    borderColor: "grey",
-                    margin: "10px",
-                    backgroundColor: "grey",
-                }}>
+                class="jobSlide">
                 <img
                     src={imageSrc}
                     style={{ width: "60px", height: "60px", padding: 20 }} />

@@ -32,7 +32,7 @@ export default class Jobs extends React.Component {
                 class="jobColumn"
                 horizontal="stretch"
                 vertical="start">
-                <h1 style={{ textAlign: "center" }}> Jobs page </h1>
+                <h1 class="pageBanner"> Jobs </h1>
                 {this.jobs.map((j) => <JobsSlide job = {j}/>)}
             </Column>
         )

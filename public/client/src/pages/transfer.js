@@ -13,13 +13,11 @@ export default class Transfer extends React.Component {
   }
 }
 
-
-
 class TransferForm extends React.Component {
   render() {
     return (
       <div>
-        <h1>Transfer to a sibling</h1>
+        <h1 class="pageBanner">Transfer</h1>
         <Formik
           initialValues={{ amount: '', user: '' }}
           validate={values => {
