@@ -1,0 +1,106 @@
+body{
+  margin-bottom: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+}
+
+h3 {
+}
+
+#banner {
+  background-color: rgba(1, 1, 1, 0);
+  color: black;
+  font-size: 5vh;
+  margin: auto;
+}
+
+#navBar {
+  justify-content: space-evenly;
+  background: green;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+}
+
+.grandparentPanel {
+  background-image: url("shared-assets/background.png");
+  background-size: 300px;
+}
+
+.pageBanner {
+  background-color: white;
+  text-align: center;
+}
+
+.navButton {
+  color: black;
+  background-color: white;
+  border: solid 1px silver;
+  text-decoration: none;
+  margin: 0;
+  width: 20vw;
+  height: 20vw;
+  font-size: 3vh;
+}
+
+.navIcon {
+  width: 100%;
+}
+
+.jobColumn {
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.jobSlide {
+  border-radius: 5px;
+  border: solid 3px whitesmoke;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 10px 18px;
+  padding: 0px 10px;
+}
+
+.jobName {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.jobDesc {
+  margin: 10px 0;
+}
+
+.jobStatus {
+  margin-left: 15px;
+  background-color: green;
+  color: white;
+}
+
+.myButton {
+  margin: auto;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+
+/*
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");

@@ -1,6 +1,7 @@
 from flask import Flask, request, Response, render_template, g, abort, redirect
 from functools import wraps
 from jwt import decode, exceptions
+
 from google.cloud import ndb
 from models import *
 import json
@@ -32,16 +33,18 @@ def render_login():
     return render_template('login.html')
 
 @app.route('/app', methods=['GET'])
-@login_required
+#@login_required
 def render_app():
-    return 'hello'
+    return render_template('client/build/index.html')
 
 @app.route('/login-parent', methods=['POST'])
 def login_parent():
     email = request.form['email']
     password = request.form['password']
 
+
     #user = #search by email to find user
+
 
     if not user or not check_password_hash(user.password, password):
         return redirect("/login", code=302)
@@ -64,6 +67,7 @@ def register():
     password = request.form['password']
 
     #user = #search by email to find user
+
 
     if (user):
         return redirect("/login", code=302)
