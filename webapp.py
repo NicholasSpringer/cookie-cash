@@ -139,6 +139,17 @@ def get_completed_jobs():
             child_name).to_dict()
         return json.dumps(child_dict['completed_jobs'])
 
+@app.route('/api/get_pending_jobs')
+@login_required
+def get_pending_jobs():
+    parent_id = request.args['parent_id']
+    child_name = request.args['child_name']
+    client = ndb.Client()
+    with client.context():
+        child_dict = get_child(parent_id, 
+            child_name).to_dict()
+        return json.dumps(child_dict['pendings_jobs'])
+
 @app.route('/api/get_sibling_names')
 @login_required
 def get_sibling_names():

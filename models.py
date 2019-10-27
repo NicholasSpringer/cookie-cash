@@ -3,19 +3,13 @@ from google.cloud import ndb
 class Job(ndb.Model):
     name = ndb.StringProperty()
     value = ndb.IntegerProperty()
-
-class CompletedJob(ndb.Model):
-    job = ndb.StructuredProperty(Job)
     timestamp = ndb.IntegerProperty()
 
 class Item(ndb.Model):
     name = ndb.StringProperty()
     value = ndb.IntegerProperty()
-    
-class PurchasedItem(ndb.Model):
-    item = ndb.StructuredProperty(Item)
     timestamp = ndb.IntegerProperty()
-
+    
 class Bond(ndb.Model):
     type = ndb.StringProperty()
     redeemed = ndb.BooleanProperty()
@@ -24,8 +18,9 @@ class Bond(ndb.Model):
 class Child(ndb.Model):
     name = ndb.StringProperty()
     cookies = ndb.IntegerProperty()
-    completed_jobs = ndb.StructuredProperty(CompletedJob, repeated=True)
-    purchased_items = ndb.StructuredProperty(PurchasedItem, repeated=True)
+    completed_jobs = ndb.StructuredProperty(Job, repeated=True)
+    pending_jobs = ndb.StructuredProperty(Job, repeated=True)
+    purchased_items = ndb.StructuredProperty(Item, repeated=True)
     bonds = ndb.StructuredProperty(Bond, repeated=True)
 
 class Parent(ndb.Model):
