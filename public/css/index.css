@@ -3,6 +3,8 @@
     background-size: cover;
     height: 75vh;
     text-align: center;
+    position: fixed;
+    top: 0;
 }
 
 .hero-text {

@@ -10,6 +10,7 @@ body {
   max-width: 500px;
   height: 100%;
   min-height: 400px;
+  border-bottom: solid 5px #00ae95;
 }
 
 /* Style the tab */
