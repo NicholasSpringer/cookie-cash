@@ -3,11 +3,13 @@ from google.cloud import ndb
 class Job(ndb.Model):
     name = ndb.StringProperty()
     value = ndb.IntegerProperty()
+    description = ndb.StringProperty()
     timestamp = ndb.IntegerProperty()
 
 class Item(ndb.Model):
     name = ndb.StringProperty()
     value = ndb.IntegerProperty()
+    description = ndb.StringProperty()
     timestamp = ndb.IntegerProperty()
     
 class Bond(ndb.Model):

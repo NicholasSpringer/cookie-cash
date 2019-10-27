@@ -4,6 +4,7 @@ from jwt import decode, exceptions
 from google.cloud import ndb
 from models import *
 import json
+import os
 
 app = Flask(__name__, template_folder='public', static_folder='')
 
@@ -160,6 +161,33 @@ def get_sibling_names():
         parent = get_parent(parent_id)
         child_list = [child.get().name for child in parent.children]
         return json.dumps([cn for cn in child_list if not cn == child_name])
+
+@app.route('/api/post_purchase', methods=['POST'])
+@login_required
+def post_purchase():
+    parent_id = request.args['parent_id']
+    child_name = request.args['child_name']
+    item_name = request.args['item_name']
+    client = ndb.Client()
+    with client.context():
+        parent = get_parent(parent_id)
+        item = [i for i in parent.available_jobs if item.name == item_name][0]
+        child = get_child(parent_id, child_id)
+        child.purchased_items.append(item)
+        child.put()
+        
+@app.route('/api/post_bond', methods=['POST'])
+@login_required
+def post_bond():
+    parent_id = request.args['parent_id']
+    child_name = request.args['child_name']
+    bond_type = request.args['bond_type']
+    client = ndb.Client()
+    with client.context():
+        parent = get_parent(parent_id)
+        item = [i for i in parent.available_jobs if item.name == item_name][0]
+        
+
 
 
 if __name__ == '__main__':
