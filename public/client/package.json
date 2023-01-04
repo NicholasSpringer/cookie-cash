@@ -11,7 +11,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-sidebar": "^3.0.2",
-    "simple-flexbox": "^2.3.0"
+    "simple-flexbox": "^2.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
